@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { MainWrapper } from './styled';
+import { apiArray } from '../../constants';
 import { getApis, getApiData } from '../../services/apiStatus';
+import { getDateTime } from '../../functions';
 import Table from '../../commons/Table';
 import Card from '../../commons/Card';
 import './style.css';
-
+// Setear el tiempo del setTimeOut en CONSTANTS!!!!
 const Home = () => {
 
     //const status = getApiData("assets");
@@ -34,20 +36,18 @@ const Home = () => {
         fetchApiList();
     }, []);
     console.log(apiList, "apiList")
+
     return (
-        <div className='mainDiv'>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+        <div className='containerDiv'>
+            <h2>Factory Four API Status Page</h2>
+            <div className='mainDiv'>
+                {apiArray.map(api =>
+                <Card 
+                    apiName={api.hostname}
+                    status={api.status}
+                    dateTime={getDateTime(api.date)}
+                />)}
+            </div>
         </div>
     )
 };

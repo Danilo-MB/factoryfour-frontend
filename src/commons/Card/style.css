@@ -1,10 +1,35 @@
 .cardBody {
     width: 200px;
     height: 200px;
-    background-color: lightpink;
+    background-color: white;
     padding: 20px;
     text-align: center;
     margin-right: 20px;
     margin-bottom: 20px;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.cardTitle {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.cardStatusSuccess {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: green;
+}
+
+.cardStatusFailed {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: red;
+}

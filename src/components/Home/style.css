@@ -1,8 +1,15 @@
+.containerDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(237, 245, 240);
+    align-items: center;
+}
+
 .mainDiv {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: gray;
-    padding: 50px;
+    background-color: rgb(237, 245, 240);
+    padding: 20px;
     justify-content: center;
 }
