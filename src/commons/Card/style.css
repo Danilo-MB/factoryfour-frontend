@@ -1,0 +1,10 @@
+.cardBody {
+    width: 200px;
+    height: 200px;
+    background-color: lightpink;
+    padding: 20px;
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+

@@ -1,0 +1,8 @@
+.mainDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: gray;
+    padding: 50px;
+    justify-content: center;
+}
