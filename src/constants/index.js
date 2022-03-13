@@ -1,3 +1,5 @@
+export const REQUEST_INTERVAL = 15000;
+
 export const API_NAMES = [ 
     "accounts", 
     "assets", 

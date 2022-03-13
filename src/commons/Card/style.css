@@ -13,11 +13,18 @@
 }
 
 .cardTitle {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     padding-top: 15px;
     padding-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cardTime {
+    font-size: 14px;
+    font-weight: 500; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cardStatusSuccess {
@@ -25,6 +32,7 @@
     font-weight: 900;
     text-transform: uppercase;
     color: green;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cardStatusFailed {
@@ -32,4 +40,5 @@
     font-weight: 900;
     text-transform: uppercase;
     color: red;
+    font-family: Arial, Helvetica, sans-serif;
 }

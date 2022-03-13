@@ -8,3 +8,9 @@ export const getDateTime = (date) => {
 
     return `Last request: ${hour}:${minutes}:${seconds}`
 };
+
+export const trimTextValue = (text, breakPoint) => {
+    const indexOfBreakpoint = text.indexOf(breakPoint, 0);
+    const modifiedName = text.substring(0, indexOfBreakpoint);
+    return modifiedName;
+};

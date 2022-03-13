@@ -1,51 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { MainWrapper } from './styled';
-import { apiArray } from '../../constants';
-import { getApis, getApiData } from '../../services/apiStatus';
+import { REQUEST_INTERVAL } from '../../constants';
+import { getApis } from '../../services/api';
 import { getDateTime } from '../../functions';
-import Table from '../../commons/Table';
 import Card from '../../commons/Card';
 import './style.css';
-// Setear el tiempo del setTimeOut en CONSTANTS!!!!
+
 const Home = () => {
-
-    //const status = getApiData("assets");
-    //console.log(status, "status")
-    // const [data, setData] = useState({});
-
-    // const fetch = async () => {
-    //     const data = await getApiData("assets")
-    //     setData(data)
-    //     console.log(data, "data adentro")
-    // }
-    
-    // useEffect(() => {
-    //     fetch()
-    // }, [])
-    // console.log(data, "data")
 
     const [apiList, setApiList] = useState([]);
 
     const fetchApiList = async () => {
         const data = await getApis();
         setApiList(data);
-        //console.log(apiList, "dentro del fetch")
     };
 
     useEffect(() => {
         fetchApiList();
     }, []);
-    console.log(apiList, "apiList")
+
+    useEffect(() => {
+        setInterval(() => 
+            fetchApiList(), REQUEST_INTERVAL);
+    }, []);
 
     return (
         <div className='containerDiv'>
-            <h2>Factory Four API Status Page</h2>
+            <h2 className='header'>Factory Four API Status Page</h2>
             <div className='mainDiv'>
-                {apiArray.map(api =>
-                <Card 
-                    apiName={api.hostname}
-                    status={api.status}
-                    dateTime={getDateTime(api.date)}
+                {apiList.map((api, index) =>
+                <Card
+                    key={index}
+                    apiName={api?.hostname}
+                    status={api?.message}
+                    dateTime={getDateTime(api?.time)}
                 />)}
             </div>
         </div>

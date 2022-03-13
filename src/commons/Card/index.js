@@ -8,7 +8,7 @@ const ApiCard = (props) => {
     const { apiName, dateTime, status } = props;
 
     const getStatusIcon = (status) => {
-        return status === "healthy" ? 
+        return status?.includes("Healthy") ? 
         <Check2Circle color="green" size={45} /> 
         : <XCircle color="red" size={45} />
     };
@@ -18,10 +18,10 @@ const ApiCard = (props) => {
             {getStatusIcon(status)}
             <Card.Body>
                 <Card.Title className='cardTitle'>{apiName}</Card.Title>
-                <Card.Title className={status === "healthy" ? 'cardStatusSuccess' : 'cardStatusFailed'}>
+                <Card.Title className={status?.includes("Healthy") ? 'cardStatusSuccess' : 'cardStatusFailed'}>
                     {status}
                 </Card.Title>
-                <Card.Text>{dateTime}</Card.Text>
+                <Card.Text className='cardTime'>{dateTime}</Card.Text>
             </Card.Body>
         </Card>
     )
