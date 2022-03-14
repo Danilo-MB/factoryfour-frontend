@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { REQUEST_INTERVAL } from '../../constants';
 import { getApis } from '../../services/api';
-import { getDateTime } from '../../functions';
-import Card from '../../commons/Card';
+import StatusCard from '../../commons/StatusCard';
 import './style.css';
 
 const Home = () => {
@@ -22,17 +21,17 @@ const Home = () => {
         setInterval(() => 
             fetchApiList(), REQUEST_INTERVAL);
     }, []);
-
+  
     return (
         <div className='containerDiv'>
             <h2 className='header'>Factory Four API Status Page</h2>
             <div className='mainDiv'>
                 {apiList.map((api, index) =>
-                <Card
+                <StatusCard
                     key={index}
-                    apiName={api?.hostname}
+                    hostName={api?.hostname}
                     status={api?.message}
-                    dateTime={getDateTime(api?.time)}
+                    time={api?.time}
                 />)}
             </div>
         </div>

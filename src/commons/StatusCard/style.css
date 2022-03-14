@@ -17,7 +17,7 @@
     font-weight: 700;
     text-transform: uppercase;
     padding-top: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -27,7 +27,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.cardStatusSuccess {
+.cardStatusHealthy {
     font-size: 20px;
     font-weight: 900;
     text-transform: uppercase;
@@ -35,10 +35,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.cardStatusFailed {
+.cardStatusNotHealthy {
     font-size: 20px;
     font-weight: 900;
     text-transform: uppercase;
     color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cardSmallText {
+    font-size: 10px;
+    font-weight: 200;
+    text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
 }
