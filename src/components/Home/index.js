@@ -3,6 +3,7 @@ import { REQUEST_INTERVAL } from '../../constants';
 import { getApis } from '../../services/api';
 import StatusCard from '../../commons/StatusCard';
 import './style.css';
+import { trimTextValue } from '../../functions';
 
 const Home = () => {
 
@@ -21,7 +22,7 @@ const Home = () => {
         setInterval(() => 
             fetchApiList(), REQUEST_INTERVAL);
     }, []);
-  
+
     return (
         <div className='containerDiv'>
             <h2 className='header'>Factory Four API Status Page</h2>
@@ -29,8 +30,8 @@ const Home = () => {
                 {apiList.map((api, index) =>
                 <StatusCard
                     key={index}
-                    hostName={api?.hostname}
-                    status={api?.message}
+                    hostName={api.hostname && trimTextValue(api.hostname, '-')}
+                    status={api?.success ? trimTextValue(api.message, ' ') : 'NOT OPERATIONAL'}
                     time={api?.time}
                 />)}
             </div>

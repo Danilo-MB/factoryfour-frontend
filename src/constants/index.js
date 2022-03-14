@@ -20,22 +20,3 @@ export const API_NAMES = [
     "users", 
     "workflows",
 ];
-
-export const apiArray = [
-    {hostname: "Nombre de la API", status: "healthy", date: new Date()},
-    {hostname: "Nombre de la API", status: "healthy", date: new Date()},
-    {hostname: "Nombre de la API", status: "roto", date: new Date()},
-    {hostname: "Nombre de la API", status: "roto", date: new Date()},
-    {hostname: "Nombre de la API", status: "healthy", date: new Date()},
-    {hostname: "Nombre de la API", status: "healthy", date: new Date()},
-    {hostname: "Nombre de la API", status: "roto", date: new Date()},
-    {hostname: "Nombre de la API", status: "roto", date: new Date()},
-    {hostname: "Nombre de la API", status: "healthy", date: new Date()},
-    {hostname: "Nombre de la API", status: "healthy", date: new Date()},
-    {hostname: "Nombre de la API", status: "roto", date: new Date()},
-    {hostname: "Nombre de la API", status: "roto", date: new Date()},
-    {hostname: "Nombre de la API", status: "healthy", date: new Date()},
-    {hostname: "Nombre de la API", status: "healthy", date: new Date()},
-    {hostname: "Nombre de la API", status: "roto", date: new Date()},
-    {hostname: "Nombre de la API", status: "roto", date: new Date()},
-]

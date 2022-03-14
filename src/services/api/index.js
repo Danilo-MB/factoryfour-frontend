@@ -6,11 +6,11 @@ const path = apiUrl => `https://api.factoryfour.com/${apiUrl}/health/status`;
 export const getApiData = (apiUrl) => {
     return axios.get(path(apiUrl))
     .then((response) => {
-        return response.data
+        return response.data;
     })
     .catch((error) => {
-        console.log(error.response, "error info");
-        return error
+        //console.log(error.response.request.responseURL, "error.response")
+        return error;
     })
 };
 
