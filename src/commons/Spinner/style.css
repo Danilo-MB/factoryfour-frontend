@@ -1,0 +1,13 @@
+.spinnerDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(237, 245, 240);
+    align-items: center;
+    padding: 100px;
+}
+
+.loadingMessage {
+    font-size: 14px;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
