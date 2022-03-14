@@ -30,7 +30,7 @@ const Home = () => {
                 {apiList.map((api, index) =>
                 <StatusCard
                     key={index}
-                    hostName={api.hostname && trimTextValue(api.hostname, '-')}
+                    hostName={api?.name}
                     status={api?.success ? trimTextValue(api.message, ' ') : 'NOT OPERATIONAL'}
                     time={api?.time}
                 />)}

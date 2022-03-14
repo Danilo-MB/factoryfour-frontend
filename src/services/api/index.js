@@ -9,8 +9,7 @@ export const getApiData = (apiUrl) => {
         return response.data;
     })
     .catch((error) => {
-        //console.log(error.response.request.responseURL, "error.response")
-        return error;
+        return error.response;
     })
 };
 
@@ -19,6 +18,7 @@ export const getApis = async () => {
     let apiList = [];
     for (let apiName of apiNames) {
         let apiObject = await getApiData(apiName);
+        apiObject.name = apiName;
         apiList.push(apiObject)
     }
     return apiList;
