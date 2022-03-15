@@ -25,6 +25,10 @@ const Home = () => {
         setInterval(() => fetchApiList(), REQUEST_INTERVAL);
     }, []);
 
+    const getMessage = (api) => {
+        return api?.success ? trimTextValue(api.message, ' ') : 'NOT OPERATIONAL'
+    };
+
     if (isLoading) return <Spinner />;
     
     return (
@@ -36,7 +40,7 @@ const Home = () => {
                     key={index}
                     apiName={api?.name}
                     hostName={api?.hostname}
-                    message={api?.success ? trimTextValue(api.message, ' ') : 'NOT OPERATIONAL'}
+                    message={getMessage(api)}
                     status={api?.success}
                     time={api?.time}
                 />)}
