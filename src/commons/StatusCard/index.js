@@ -2,30 +2,31 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './style.css';
 import { Check2Circle, XCircle } from 'react-bootstrap-icons';
-import { getDateTime } from '../../functions';
+import { getDateTime } from '../../utils';
 
 const StatusCard = (props) => {
 
-    const { hostName, time, status } = props;
+    const { apiName, hostName, time, message, status } = props;
 
     const getStatusIcon = (status) => {
-        return status?.includes("Healthy") ? 
+        return status ? 
         <Check2Circle color="green" size={45} /> 
         : <XCircle color="red" size={45} />
     };
 
     const getStyle = (status) => {
-        return status?.includes("Healthy") ? 'cardStatusHealthy' : 'cardStatusNotHealthy'
+        return status ? 'cardStatusHealthy' : 'cardStatusNotHealthy'
     };
 
     return (
         <Card className='cardBody'>
             {getStatusIcon(status)}
             <Card.Body>
-                <Card.Title className='cardTitle'>{hostName}</Card.Title>
-                <Card.Title className={getStyle(status)}>{status}</Card.Title>
-                {time && 
-                <Card.Text className='cardSmallText'>Last request:</Card.Text>}
+                <Card.Title className='cardTitle'>{apiName}</Card.Title>
+                {hostName &&
+                <Card.Title className='cardSmallText'>{hostName}</Card.Title>}
+                <Card.Title className={getStyle(status)}>{message}</Card.Title>
+                <Card.Text className='cardSmallText'>Last request:</Card.Text>
                 <Card.Text className='cardTime'>{getDateTime(time)}</Card.Text>
             </Card.Body>
         </Card>

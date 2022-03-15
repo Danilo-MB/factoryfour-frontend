@@ -3,7 +3,7 @@ import { REQUEST_INTERVAL } from '../../constants';
 import { getApis } from '../../services/api';
 import StatusCard from '../../commons/StatusCard';
 import './style.css';
-import { trimTextValue } from '../../functions';
+import { trimTextValue } from '../../utils';
 import Spinner from '../../commons/Spinner';
 
 const Home = () => {
@@ -34,8 +34,10 @@ const Home = () => {
                 {apiList.map((api, index) =>
                 <StatusCard
                     key={index}
-                    hostName={api?.message?.includes('Healthy') ? api.hostname : api.name}
-                    status={api?.success ? trimTextValue(api.message, ' ') : 'NOT OPERATIONAL'}
+                    apiName={api?.name}
+                    hostName={api?.hostname}
+                    message={api?.success ? trimTextValue(api.message, ' ') : 'NOT OPERATIONAL'}
+                    status={api?.success}
                     time={api?.time}
                 />)}
             </div>
